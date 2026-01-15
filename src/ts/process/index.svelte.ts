@@ -103,7 +103,9 @@ export async function sendChat(chatProcessIndex = -1,arg:{
         stage4Duration: 0
     }
 
-    const generationInfo: MessageGenerationInfo = {}
+    const generationInfo: MessageGenerationInfo = {
+        model: getGenerationModelString()
+    }
 
     let lastCharMessageIndex = -1
     let hadImgGenTag = false
