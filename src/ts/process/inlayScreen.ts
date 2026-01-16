@@ -43,6 +43,10 @@ export function runInlayScreen(char:character, data:string):{text:string, promis
                                     console.error(error)
                                     return '[Image failed]'
                                 }
+                                const imgHTML = new Image()
+                                imgHTML.src = v
+                                const inlay = await writeInlayImage(imgHTML)
+                                return `{{inlay::${inlay}}}`
                             })())
                             return match
                         })
